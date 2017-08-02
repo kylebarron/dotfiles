@@ -23,3 +23,7 @@ cp ~/.oh-my-zsh/themes/materialshell.zsh-theme $DIR/zsh/
 # Copy .bashrc
 mkdir $DIR/bash
 cp ~/.bashrc $DIR/bash
+
+# Copy .gitconfig
+mkdir $DIR/git
+cp ~/.gitconfig $DIR/git/
