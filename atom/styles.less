@@ -1,0 +1,95 @@
+atom-workspace {
+    // font-family: Fira Code;
+}
+
+// atom-text-editor {
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   font-family: "Fira Code";
+//   font-weight: 500;
+//   line-height: 1.7;
+// }
+
+// atom-text-editor.editor {
+//   .syntax--storage.syntax--type.syntax--function.syntax--arrow,
+//   .syntax--keyword.syntax--operator:not(.accessor),
+//   .syntax--punctuation.syntax--definition {
+//     font-family: "Fira Code";
+//   }
+// 
+//   .syntax--string.syntax--quoted,
+//   .syntax--string.syntax--regexp {
+//     -webkit-font-feature-settings: "liga" off, "calt" off;
+//   }
+// }
+
+atom-text-editor.editor .syntax--source.syntax--coffee {
+  -webkit-font-feature-settings: "liga" off, "calt" off;
+}
+
+// These colors are specific to the theme. Do not use in a package!
+
+@very-light-gray:   #EEFFFF;
+@light-gray:        #B2CCD6;
+@gray:              #373b41;
+@dark-gray:         #282a2e;
+@very-dark-gray:    #263238;
+
+@green:             #C3E88D;
+@teal:              #009688;
+@light-teal:        #73d1c8;
+@cyan:              #89DDF3;
+@blue:              #82AAFF;
+@indigo:            #7986CB;
+@purple:            #C792EA;
+@pink:              #FF5370;
+@red:               #F07178;
+@strong-orange:     #F78C6A;
+@orange:            #FFCB6B;
+@light-orange:      #FFE082;
+
+.syntax--r {
+    // .syntax--meta {
+    //     &.syntax--function-call {
+    //         color: @blue;
+    // 
+    //         .syntax--punctuation {
+    //             color: @cyan;
+    //         }
+    // 
+    //         .syntax--arguments {
+    //             color: @indigo;
+    // 
+    //             &.syntax--punctuation {
+    //                 color: @cyan;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .syntax--variable {
+        &.syntax--self {
+            color: @pink;
+        }
+    }
+
+    // .syntax--meta {
+    //     .syntax--punctuation {
+    //         &.syntax--inheritance, &.syntax--section {
+    //             color: @cyan;
+    //         }
+    //     }
+    // }
+
+    // .syntax--variable {
+    //     &.syntax--parameter {
+    //         color: @cyan;
+    //     }
+    // }
+
+    // .syntax--keyword {
+    //     &.syntax--operator {
+    //         color: @purple;
+    //     }
+    // }
+}
