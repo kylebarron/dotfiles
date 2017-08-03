@@ -10,10 +10,12 @@ cp ~/.atom/config.cson $DIR/atom/
 cp ~/.atom/github.cson $DIR/atom/
 cp ~/.atom/init.coffee $DIR/atom/
 cp ~/.atom/keymap.cson $DIR/atom/
-# cp ~/.atom/projects.cson $DIR/atom/
+cp ~/.atom/projects.cson $DIR/atom/
 cp ~/.atom/remoteEdit.json $DIR/atom/
 cp ~/.atom/snippets.cson $DIR/atom/
 cp ~/.atom/styles.less $DIR/atom/
+# Copy list of Atom packages
+apm list --installed --bare > $DIR/atom/$(hostname)_package_list.txt
 
 # Copy ZSH material theme and .zshrc
 mkdir $DIR/zsh
