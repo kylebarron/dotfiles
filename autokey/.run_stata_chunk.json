@@ -1,0 +1,30 @@
+{
+    "abbreviation": {
+        "triggerInside": false,
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "abbreviations": [],
+        "immediate": false,
+        "ignoreCase": false
+    },
+    "type": "script",
+    "modes": [
+        3
+    ],
+    "store": {},
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "usageCount": 3,
+    "showInTrayMenu": false,
+    "hotkey": {
+        "hotKey": "r",
+        "modifiers": [
+            "<ctrl>"
+        ]
+    },
+    "description": "run_stata_chunk",
+    "prompt": false,
+    "omitTrigger": false
+}

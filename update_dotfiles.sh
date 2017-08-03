@@ -27,3 +27,14 @@ cp ~/.bashrc $DIR/bash
 # Copy .gitconfig
 mkdir $DIR/git
 cp ~/.gitconfig $DIR/git/
+
+# Copy RStudio user settings
+mkdir $DIR/rstudio
+cp ~/.rstudio-desktop/monitored/user-settings/user-settings $DIR/rstudio/
+
+# Copy autokey files
+mkdir $DIR/autokey
+cp ~/.config/autokey/data/Sample\ Scripts/run_stata.py $DIR/autokey/
+cp ~/.config/autokey/data/Sample\ Scripts/.run_stata.json $DIR/autokey/
+cp ~/.config/autokey/data/Sample\ Scripts/run_stata_chunk.py $DIR/autokey/
+cp ~/.config/autokey/data/Sample\ Scripts/.run_stata_chunk.json $DIR/autokey/
