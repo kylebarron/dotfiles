@@ -16,6 +16,12 @@ cp ~/.atom/snippets.cson $DIR/atom/
 cp ~/.atom/styles.less $DIR/atom/
 # Copy list of Atom packages
 apm list --installed --bare > $DIR/atom/$(hostname)_package_list.txt
+# Add Atom Material Icon
+wget "https://www.dropbox.com/s/8gyn40sw95626dx/Atom-MD-Icon.zip?dl=1" -O "$DIR/atom_icon"
+unzip $DIR/atom_icon
+cp $DIR/Atom\ Icon/PNGs/icon_512x512@2x.png $DIR/atom/atom_icon.png
+rm $DIR/atom_icon
+rm -r $DIR/Atom\ Icon/ __MACOSX/
 
 # Copy ZSH material theme and .zshrc
 mkdir $DIR/zsh
