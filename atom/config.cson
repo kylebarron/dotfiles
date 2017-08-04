@@ -71,7 +71,6 @@
       "welcome"
       "linter-write-good"
       "block-cursor"
-      "language-stata-plus"
       "linter-flake8"
       "linter-shellcheck"
       "linter-ui-default"
@@ -208,6 +207,9 @@
       "«»"
       "‹›"
     ]
+".regexp.source.stata":
+  editor:
+    preferredLineLength: 150
 ".source.stata":
   "atom-alignment":
     addSpacePostfix: true
@@ -228,15 +230,6 @@
       "=>"
       ":="
       ":"
-    ]
-  "bracket-matcher":
-    autocompleteCharacters: [
-      "()"
-      "[]"
-      "{}"
-      "''"
-      "`'"
-      "\"\""
     ]
   editor:
     autoIndent: true

@@ -14,7 +14,7 @@ RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(git_remote_status) $(git_prompt_short_
 
 # Trim long paths:
 # https://github.com/wesbos/Cobalt2-iterm/issues/15
-local _current_dir="%{$green%}%{%$(( $COLUMNS - 50 ))<...<%0~%<<%}%{$reset_color%} "
+local _current_dir="%{$green%}%{%$(( $COLUMNS - 51 ))<...<%0~%<<%}%{$reset_color%} "
 # local _current_dir="%{$green%}${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}%{$reset_color%} "
 local _return_status="%{$red%}%(?..×)%{$reset_color%}"
 

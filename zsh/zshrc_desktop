@@ -108,6 +108,9 @@ alias rotate-dp="xrandr --output DP-2 --rotate left"
 alias normal-dp="xrandr --output DP-2 --rotate normal"
 alias stata="/opt/stata/xstata"
 
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
 function ssh-mit() {
     ssh ${1} barronk@eosloan.mit.edu
 }
