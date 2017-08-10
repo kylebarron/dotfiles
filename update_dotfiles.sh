@@ -46,3 +46,7 @@ cp ~/.config/autokey/data/Sample\ Scripts/run_stata.py          $DIR/autokey/
 cp ~/.config/autokey/data/Sample\ Scripts/.run_stata.json       $DIR/autokey/
 cp ~/.config/autokey/data/Sample\ Scripts/run_stata_chunk.py    $DIR/autokey/
 cp ~/.config/autokey/data/Sample\ Scripts/.run_stata_chunk.json $DIR/autokey/
+
+# Copy tmux config
+mkdir $DIR/tmux
+cp ~/.tmux.conf $DIR/tmux/tmux.conf
