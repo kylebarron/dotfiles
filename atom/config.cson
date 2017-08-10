@@ -17,6 +17,7 @@
   "atom-alignment":
     addSpacePostfix: true
     alignBy: [
+      "<-"
       "=>"
       ":="
       ":"
@@ -26,7 +27,7 @@
       "`"
       ">="
       "<="
-      "/"
+      "~"
     ]
     alignmentSpaceChars: [
       "=>"
@@ -82,6 +83,10 @@
       "highlight-line"
       "autocomplete-R"
       "language-gfm"
+    ]
+    packagesWithKeymapsDisabled: [
+      "platformio-ide-terminal"
+      "atom-terminal"
     ]
     projectHome: "/home/kyle/"
     telemetryConsent: "no"
