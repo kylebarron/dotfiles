@@ -4,6 +4,8 @@
 # https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Test for learning pull --rebase
+
 # Copy Atom dotfiles
 mkdir $DIR/atom
 cp ~/.atom/config.cson $DIR/atom/
