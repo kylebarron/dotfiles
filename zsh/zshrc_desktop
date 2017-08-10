@@ -2,13 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/opt/node/bin:$PATH"
 export PATH="/opt/julia/bin:$PATH"
-export PATH="/opt/anaconda/bin:$PATH"
+export PATH="$HOME/opt/anaconda/bin:$PATH"
+export PATH="$HOME/opt/anaconda3/bin:$PATH"
 export PATH="/usr/local/cuda-8.0/bin:$PATH"
 export PATH="/opt/forti:$PATH"
 #export PATH="/opt/stata15:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:LD_LIBRARY_PATH"
 export PATH="$PATH:/opt/st3"
-export PATH="/opt/stata/:$PATH"
+#export PATH="/opt/stata/:$PATH"
+export PATH="/opt/cisco/anyconnect/vpn:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/kyle/.oh-my-zsh
@@ -101,6 +103,7 @@ alias nber-vpn="cd /opt/forti && forti_cli --server vpn.nber.org:10443 --vpnuser
 alias forti=vpn-nber
 alias scale-hdmi="xrandr --output HDMI-0 --scale 1.65x1.65"
 alias scale-dvi="xrandr --output DVI-I-1 --scale 1.65x1.65"
+alias scale="scale-hdmi && scale-dvi"
 alias hdmi-scale="xrandr --output HDMI-0 --scale 1.65x1.65"
 alias dp-normal="xrandr --output DP-2 --rotate normal"
 alias dp-rotate="xrandr --output DP-2 --rotate left"
