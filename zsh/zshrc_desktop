@@ -11,6 +11,11 @@ export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:LD_LIBRARY_PATH"
 export PATH="$PATH:/opt/st3"
 #export PATH="/opt/stata/:$PATH"
 export PATH="/opt/cisco/anyconnect/vpn:$PATH"
+export PATH="/opt/sublime_text/:$PATH"
+
+
+export SSH_AUTH_SOCK=~/.export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/kyle/.oh-my-zsh
@@ -62,7 +67,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages extract copydir copyfile tmux web-search zsh-wakatime shrink-path)
+plugins=(git colored-man-pages extract copydir copyfile tmux web-search zsh-wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,11 +100,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gpg=gpg2
+alias bfg="java -jar /opt/bfg/bfg-1.12.15.jar"
+
+
 eval "$(hub alias -s)"
-alias ssh-google="ssh kyle@104.196.112.154"
+alias clip='xclip -sel clip'
+alias ssh-google="ssh kyle@104.196.112.154 -L8888:localhost:8888"
 alias ssh-reverse="ssh -f -N -T -R22222:localhost:22 -R8787:localhost:8787 -R8888:localhost:8888 kyle@104.196.112.154"
-alias vpn-nber="cd /opt/forti && forti_cli --server vpn.nber.org:10443 --vpnuser barronk"
-alias nber-vpn="cd /opt/forti && forti_cli --server vpn.nber.org:10443 --vpnuser barronk"
+alias vpn-nber="cd /opt/forti && forti_cli --server vpn.nber.org:10443 --vpnuser barronk --keepalive"
+alias nber-vpn="cd /opt/forti && forti_cli --server vpn.nber.org:10443 --vpnuser barronk --keepalive"
 alias forti=vpn-nber
 alias scale-hdmi="xrandr --output HDMI-0 --scale 1.65x1.65"
 alias scale-dvi="xrandr --output DVI-I-1 --scale 1.65x1.65"
@@ -114,15 +125,27 @@ alias stata="/opt/stata/xstata"
 ## Show hidden files ##
 alias l.='ls -d .* --color=auto'
 
+function jupyter-mit() {
+    ssh -L 7001:node${1}.eth.cluster:7001 -N barronk@eosloan.mit.edu
+}
+alias mit-jupyter=jupyter-mit
 function ssh-mit() {
     ssh ${1} barronk@eosloan.mit.edu
-}
-function ssh-local() {
-    ssh ${1} kyle@192.168.0.41
 }
 function ssh-home() {
     ssh ${1} kyle@kylebarron.ddns.net
 }
+
+function ssh-age() {
+    ssh -L 881${1}:localhost:8888 \
+        barronk@age${1}.nber.org
+}
+
+function age-rstudio() {
+   ssh -N -L 882${1}:localhost:8787 \
+        barronk@age${1}.nber.org
+}
+
 function ssh-nber() {
     ssh ${2} barronk@${1}.nber.org
 }
@@ -138,4 +161,9 @@ bashcompinit
 eval "$(pandoc --bash-completion)"
 
 eval $(thefuck --alias)
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+if [[ $ZSH_EVAL_CONTEXT == 'file' ]]; then
+  source "/home/kyle/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
