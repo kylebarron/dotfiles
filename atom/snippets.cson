@@ -20,20 +20,6 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
-'*':
-  'people-call':
-    'prefix': 'people'
-    'body': 
-      """${1:Person Name}
-
-              email:       $2
-              institution: $3
-              role:        $4
-              notes:       $5
-          
-          $6
-      """
-
 '.source.stata':
   'do file header':
     'prefix': 'header'
@@ -84,9 +70,8 @@
         * Run the things
         * --------------
 
-        cap mkdir ${2:$datadir/base}
         `capture' `noisily' {
-            ${3:get_csv}
+            ${2:get_csv}
         }
         local rc = _rc
 
@@ -103,18 +88,6 @@
     end
 
     $4"""
-'text.md':
-  'people-call':
-    'prefix': 'people'
-    'body': 
-      """${1:Person Name}
-
-          email:       $2
-          institution: $3
-          role:        $4
-          notes:       $5
-      """
-
 '.source.r':
   'header':
     'prefix': 'header'
@@ -142,3 +115,23 @@
 
 
       ${8:main:tab}"""
+'.text.md':
+  'event':
+    'prefix': 'event'
+    'body':
+      """**Event: ${1:Event description}**
+      Date: ${2: ctrl-shift-alt-T}
+      Note: $3
+      """
+  'people-call':
+    'prefix': 'people'
+    'body': 
+      """${1:Person Name}
+
+              email:       $2
+              institution: $3
+              role:        $4
+              notes:       $5
+          
+          $6
+      """
