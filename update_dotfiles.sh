@@ -4,8 +4,6 @@
 # https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Test for learning pull --rebase
-
 # Copy Atom dotfiles
 mkdir $DIR/atom
 cp ~/.atom/config.cson $DIR/atom/
@@ -37,6 +35,9 @@ cp ~/.bashrc $DIR/bash/bashrc_$(hostname)
 # Copy .gitconfig
 mkdir $DIR/git
 cp ~/.gitconfig $DIR/git/gitconfig_$(hostname)
+
+# Copy R installed packages
+Rscript R/get_package_list.R
 
 # Copy RStudio user settings
 mkdir $DIR/rstudio
