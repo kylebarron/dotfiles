@@ -23,21 +23,21 @@
                   "baseUrl": "http://localhost:8888",
                   "token": redacted
               }
-          }, 
+          },
           {
               "name": "Age1",
               "options": {
                   "baseUrl": "http://localhost:8811",
                   "token": redacted
               }
-          }, 
+          },
           {
               "name": "Age2",
               "options": {
                   "baseUrl": "http://localhost:8812",
                   "token": redacted
               }
-          }, 
+          },
           {
               "name": "Age3",
               "options": {
@@ -90,7 +90,6 @@
       ]
     '''
     languageMappings: "{\"ir\": \"r\", \"bash\": \"shell script\"}"
-    outputAreaDefault: true
     startDir: "dirOfFile"
   "Remote-FTP":
     beta: {}
@@ -126,6 +125,9 @@
     general: {}
   "atom-clock":
     dateFormat: "ddd MMM D YYYY h:mm A"
+  "atom-ide-ui":
+    use:
+      "atom-ide-diagnostics-ui": false
   "atom-material-ui":
     colors:
       abaseColor: "#ffa726"
@@ -140,8 +142,7 @@
   "atom-shell-commands": {}
   "atom-terminal": {}
   "autocomplete-bibtex":
-    references: [
-    ]
+    references: []
     resultTemplate: "\\cite{[key]}"
     scope: ".text.tex.latex,.source.gfm,.text.md"
   "autocomplete-paths": {}
@@ -183,6 +184,8 @@
       "Remote-FTP"
       "julia-client"
       "ink"
+      "atom-ide-ui"
+      "teletype"
     ]
     ignoredNames: [
       ".git"
@@ -302,12 +305,13 @@
       "text.plain"
       "text.plain.null-grammar"
     ]
-    knownWords: [
-    ]
+    knownWords: []
   "split-diff":
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
+  "stata-exec":
+    advancePosition: true
   tabs:
     enableMruTabSwitching: false
     enableVcsColoring: true
@@ -319,7 +323,7 @@
     showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
-    removeTrailingWhitespace: false
+    ignoreWhitespaceOnlyLines: true
 ".coffee.source":
   editor:
     tabLength: 2

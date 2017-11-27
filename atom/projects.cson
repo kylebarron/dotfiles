@@ -3,7 +3,7 @@
     title: "Geisinger-local"
     group: "Doyle"
     paths: [
-      "~/Documents/research/doyle/eosloan/geisinger"
+      "~/research/doyle/eosloan/geisinger"
     ]
   }
   {
@@ -14,73 +14,79 @@
     ]
   }
   {
-    title: "VA End of Life"
+    title: "VA Goals of Care"
     group: "Doyle"
     paths: [
-      "~/Documents/research/doyle/va-eol"
+      "~/research/doyle/va/goals_of_care"
     ]
   }
   {
     title: "Language Stata"
     group: "Atom"
     paths: [
-      "~/github/language-stata"
+      "~/github/atom/language-stata"
     ]
   }
   {
-    title: "Foster Care"
-    group: "Doyle"
-    paths: [
-      "~/Documents/research/doyle/misc/foster"
-    ]
-  }
-  {
-    title: "Airbnb New"
+    title: "Airbnb Ztrax"
     group: "Personal"
     paths: [
-      "~/Documents/research/personal/airbnb-personal"
+      "~/research/personal/airbnb-ztrax"
+    ]
+  }
+  {
+    title: "Airbnb Personal"
+    group: "Personal"
+    paths: [
+      "~/research/personal/airbnb-personal"
     ]
   }
   {
     title: "Airbnb Old"
     group: "Personal"
     paths: [
-      "~/Dropbox/research/Airbnb"
+      "~/Dropbox (MIT)/Airbnb Project"
     ]
   }
   {
-    title: "Lib -- local"
+    title: "Lib"
     group: "Doyle"
     paths: [
-      "~/Documents/research/doyle/lib"
+      "~/lib"
     ]
   }
   {
     title: "Linux Setup"
     paths: [
-      "~/Documents/config/linux_setup"
-    ]
-  }
-  {
-    title: "Northwell-local"
-    group: "Doyle"
-    paths: [
-      "~/Documents/research/doyle/eosloan/northwell"
-      "~/doyle/eosloan/aurora/incarceration"
+      "~/github/config/linux_setup"
     ]
   }
   {
     title: "Language R"
     group: "Personal"
     paths: [
-      "~/github/language-r"
+      "~/github/atom/language-r"
+      "~/github/atom/language-stata"
+      "~/github/atom/language-python"
     ]
   }
   {
     title: "Dotfiles"
     group: "Config"
     paths: [
-      "~/Documents/config/dotfiles"
+      "~/github/config/dotfiles"
+    ]
+  }
+  {
+    title: "Website"
+    paths: [
+      "~/Documents/kylebarron.github.io"
+    ]
+  }
+  {
+    title: "Stata Exec"
+    paths: [
+      "~/github/atom/stata-exec"
     ]
   }
 ]

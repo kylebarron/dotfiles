@@ -39,12 +39,6 @@
   'ctrl-shift-down'  : 'editor:add-selection-below'
   'ctrl-shift-up'    : 'editor:add-selection-above'
   'ctrl-alt-shift-p' : 'editor:log-cursor-scope'
-'atom-text-editor[data-grammar="source stata"]':
-  'ctrl-enter': 'platformio-ide-terminal:insert-selected-text'
-'body':
-  'ctrl-tab'       : 'pane:show-next-item'
-  'ctrl-shift-tab' : 'pane:show-previous-item'
-  'ctrl-shift-t'   : 'pane:reopen-closed-item'
 # Default Keymaps for Markdown Writer
 # https://atom.io/packages/markdown-writer
 #
