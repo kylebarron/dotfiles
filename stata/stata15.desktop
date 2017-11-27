@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Stata/SE 15.0
+Comment=Stata software
+Exec=/opt/stata/xstata
+Icon=stata15
+Type=Application
+Terminal=true
+StartupNotify=false
+Categories=Graphics;Science;Math;
