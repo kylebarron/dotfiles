@@ -40,6 +40,20 @@
       \"\"\"
       
       $9"""
+'.source.shell':
+  'header':
+    'prefix': 'header'
+    'body':
+      """#! /usr/bin/env bash
+      # Project: ${1:Project Name}
+      # Program: ${2:01process}.sh
+      # Author:  Kyle Barron <barronk@mit.edu>
+      # Created: ${3:ctrl-shift-alt-T}
+      # Purpose: ${4:Process data}
+      # Depends: data/${5:base}
+      # Output:  data/${6:final}
+
+      $7"""
 '.source.stata':
   'do file header':
     'prefix': 'header'
@@ -70,6 +84,7 @@
       * Main program wrapper
       * --------------------
 
+      cap program drop main
       program main
           syntax, [CAPture NOIsily email]
 

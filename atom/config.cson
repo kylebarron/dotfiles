@@ -4,87 +4,10 @@
     gateways: '''
       [
           {
-              "name": "google-mysql",
+              "name": "Remote",
               "options": {
                   "baseUrl": "http://localhost:8888",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Engaging",
-              "options": {
-                  "baseUrl": "http://localhost:7001",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age",
-              "options": {
-                  "baseUrl": "http://localhost:8888",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age1",
-              "options": {
-                  "baseUrl": "http://localhost:8811",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age2",
-              "options": {
-                  "baseUrl": "http://localhost:8812",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age3",
-              "options": {
-                  "baseUrl": "http://localhost:8813",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age4",
-              "options": {
-                  "baseUrl": "http://localhost:8814",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age5",
-              "options": {
-                  "baseUrl": "http://localhost:8815",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age6",
-              "options": {
-                  "baseUrl": "http://localhost:8816",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age7",
-              "options": {
-                  "baseUrl": "http://localhost:8817",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age8",
-              "options": {
-                  "baseUrl": "http://localhost:8818",
-                  "token": redacted
-              }
-          },
-          {
-              "name": "Age9",
-              "options": {
-                  "baseUrl": "http://localhost:8819",
-                  "token": redacted
+                  "token": "redacted"
               }
           }
       ]
@@ -101,6 +24,8 @@
     tree:
       hideLocalWhenDisplayed: true
       useDockIntegration: true
+  Zen:
+    minimap: true
   aligner:
     alignComments: true
   "atom-alignment":
@@ -112,6 +37,7 @@
       "="
       "\""
       "|"
+      "//"
       "/"
     ]
     alignmentSpaceChars: [
@@ -123,6 +49,11 @@
       rscript:
         path: "/usr/bin/Rscript"
     general: {}
+    markdown:
+      default_beautifier: "Remark"
+    python:
+      default_beautifier: "yapf"
+      multi_line_output: "Grid"
   "atom-clock":
     dateFormat: "ddd MMM D YYYY h:mm A"
   "atom-ide-ui":
@@ -167,8 +98,6 @@
       ]
     disabledPackages: [
       "welcome"
-      "linter-write-good"
-      "block-cursor"
       "linter-flake8"
       "aligner"
       "aligner-javascript"
@@ -177,16 +106,20 @@
       "highlight-line"
       "autocomplete-R"
       "language-gfm"
-      "minimap-pigments"
       "minimap-cursorline"
       "linter-ui-default"
       "latexer"
-      "Remote-FTP"
       "julia-client"
       "ink"
       "atom-ide-ui"
       "teletype"
+      "markdown-preview"
+      "auto-detect-indentation"
+      "python-tools"
+      "autocomplete-python"
+      "indent-guide-improved"
     ]
+    excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
       ".hg"
@@ -199,7 +132,6 @@
     ]
     packagesWithKeymapsDisabled: [
       "platformio-ide-terminal"
-      "atom-terminal"
     ]
     projectHome: "/home/kyle/"
     telemetryConsent: "no"
@@ -207,14 +139,18 @@
       "atom-material-ui"
       "atom-material-syntax"
     ]
+    warnOnLargeFileLimit: 5
   docblockr: {}
   editor:
     autoIndentOnPaste: false
     fontSize: 13
+    preferredLineLength: 100
     scrollPastEnd: true
     softWrap: true
     softWrapHangingIndent: 4
     tabLength: 4
+  "exception-reporting":
+    userId: "1cb5eec8-c5ea-4294-a0a3-2d113b96890d"
   "file-icons": {}
   firacode:
     scopes: [
@@ -241,9 +177,25 @@
   "linter-ui-default":
     panelHeight: 61
     showPanel: true
+  "markdown-preview-enhanced":
+    codeBlockTheme: "atom-material.css"
+    previewTheme: "atom-material.css"
+  "markdown-preview-plus":
+    enableLatexRenderingByDefault: true
+    enablePandoc: true
+    useLazyHeaders: false
+  "markdown-table-formatter":
+    limitLastColumnPadding: true
+    markdownGrammarScopes: [
+      "source.gfm"
+      "text.md"
+    ]
   "markdown-writer":
     fileExtension: ".md"
+    relativeImagePath: true
     siteEngine: "jekyll"
+    siteImagesDir: "docs/img/{year}/{month}/"
+    tableExtraPipes: true
   minimap:
     adjustAbsoluteModeHeight: true
     plugins:
@@ -292,6 +244,9 @@
   "project-manager":
     savePathsRelativeToHome: true
     sortBy: "last modified"
+  "python-indent": {}
+  "regex-railroad-diagram":
+    enabled: false
   script:
     cwdBehavior: "Directory of the script"
   "spell-check":
@@ -305,7 +260,6 @@
       "text.plain"
       "text.plain.null-grammar"
     ]
-    knownWords: []
   "split-diff":
     ignoreWhitespace: true
     leftEditorColor: "red"
@@ -315,7 +269,11 @@
   tabs:
     enableMruTabSwitching: false
     enableVcsColoring: true
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  typewriter:
+    showGutter: true
+    showScrollbar: true
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
     showStatusBarIcon: false
@@ -331,6 +289,13 @@
   editor:
     preferredLineLength: 100
     softWrapAtPreferredLineLength: true
+".python.regexp.source":
+  editor:
+    preferredLineLength: 90
+".python.source":
+  editor:
+    autoIndent: true
+    preferredLineLength: 80
 ".r.source":
   "bracket-matcher":
     autocompleteCharacters: [
@@ -377,7 +342,7 @@
     preferredLineLength: 150
     showIndentGuide: true
     showInvisibles: false
-    softWrapAtPreferredLineLength: true
+    softWrapAtPreferredLineLength: false
 "text.latex.tex":
   "atom-alignment":
     addSpacePostfix: true
