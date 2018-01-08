@@ -3,7 +3,7 @@
     "autoindent": true,
     "autosave": false,
     "colorcolumn": 0,
-    "colorscheme": "nano",
+    "colorscheme": "geany",
     "cursorline": true,
     "eofnewline": false,
     "fileformat": "unix",
