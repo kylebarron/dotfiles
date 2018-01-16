@@ -13,6 +13,12 @@ export MANPATH=$HOME/local/share/man:$MANPATH
 
 export SSH_AUTH_SOCK=~/.export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 
+if type "micro" > /dev/null
+then
+    export EDITOR='micro'    
+else
+    export EDITOR='nano'
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/kyle/.oh-my-zsh

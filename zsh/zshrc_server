@@ -9,6 +9,13 @@ export MANPATH=$HOME/local/share/man:$MANPATH
 export proj_home=/disk/agedisk1/medicare.work/doyle-DUA18266/barronk
 cd $proj_home
 
+if type "micro" > /dev/null
+then
+    export EDITOR='micro'    
+else
+    export EDITOR='nano'
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/homes/nber/barronk/.oh-my-zsh
 
