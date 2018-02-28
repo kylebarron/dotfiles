@@ -132,6 +132,8 @@ split_arguments_when_comma_terminated=False
 # after.
 split_before_bitwise_operator=True
 
+split_before_closing_bracket=False
+
 # Split before a dictionary or set generator (comp_for). For example, note
 # the split before the 'for':
 #
