@@ -16,6 +16,7 @@
     st      = status
     cp      = cherry-pick
     cl      = clone
+    ls      = ls-files
 
     undo    = checkout --
     unstage = reset HEAD --
