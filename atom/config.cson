@@ -1,6 +1,7 @@
 "*":
   Hydrogen:
     autoScroll: false
+    debug: true
     gateways: '''
       [
           {
@@ -12,7 +13,8 @@
           }
       ]
     '''
-    languageMappings: "{\"ir\": \"r\", \"bash\": \"shell script\"}"
+    kernelNotifications: true
+    languageMappings: "{\"ir\": \"r\", \"bash\": \"shell script\", \"python\": \"magicpython\"}"
     startDir: "dirOfFile"
   "Remote-FTP":
     beta: {}
@@ -25,7 +27,14 @@
       hideLocalWhenDisplayed: true
       useDockIntegration: true
   Zen:
+    gutter: true
     minimap: true
+    tabs: "multiple"
+    width: 130
+  "advanced-open-file":
+    createDirectories: true
+    createFileInstantly: true
+    fuzzyMatch: true
   aligner:
     alignComments: true
   "atom-alignment":
@@ -49,16 +58,27 @@
       rscript:
         path: "/usr/bin/Rscript"
     general: {}
+    js:
+      brace_style: "collapse-preserve-inline"
+      indent_size: 2
     markdown:
       default_beautifier: "Remark"
     python:
       default_beautifier: "yapf"
+      formater: "yapf"
+      max_line_length: 80
       multi_line_output: "Grid"
   "atom-clock":
     dateFormat: "ddd MMM D YYYY h:mm A"
+  "atom-fuzzy-grep":
+    detectGitProjectAndUseGitGrep: false
+    grepCommandString: "rg -i -n -H --no-heading --column"
+  "atom-gmail":
+    centered: false
   "atom-ide-ui":
-    use:
-      "atom-ide-diagnostics-ui": false
+    "atom-ide-code-format": {}
+    "atom-ide-diagnostics-ui": {}
+    use: {}
   "atom-material-ui":
     colors:
       abaseColor: "#ffa726"
@@ -78,9 +98,14 @@
     scope: ".text.tex.latex,.source.gfm,.text.md"
   "autocomplete-paths": {}
   "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    moveToCancel: true
   "autocomplete-python":
+    showTooltips: true
     useKite: false
+    useSnippets: "required"
+  "build-cmake": {}
   "command-palette":
     preserveLastSearch: true
   core:
@@ -99,25 +124,31 @@
     disabledPackages: [
       "welcome"
       "linter-flake8"
-      "aligner"
-      "aligner-javascript"
-      "aligner-python"
       "language-pfm"
       "highlight-line"
       "autocomplete-R"
       "language-gfm"
       "minimap-cursorline"
-      "linter-ui-default"
-      "latexer"
-      "julia-client"
       "ink"
-      "atom-ide-ui"
       "teletype"
+      "linter-shellcheck"
+      "regex-railroad-diagram"
+      "python-indent"
+      "minimap-autohider"
+      "editorconfig"
+      "hydrogen-python"
+      "linter-ui-default"
+      "linter"
+      "git-plus"
+      "language-python"
+      "language-weave"
+      "markdown-preview-enhanced"
       "markdown-preview"
-      "auto-detect-indentation"
-      "python-tools"
-      "autocomplete-python"
-      "indent-guide-improved"
+      "color-picker"
+      "spell-check"
+      "typewriter"
+      "latexer"
+      "latex"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -128,12 +159,15 @@
       "._*"
       "Thumbs.db"
       "desktop.ini"
-      "data"
+      ".ropeproject"
     ]
     packagesWithKeymapsDisabled: [
       "platformio-ide-terminal"
+      "build"
+      "fuzzy-finder"
+      "markdown-preview-enhanced"
+      "markdown-writer"
     ]
-    projectHome: "/home/kyle/"
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
@@ -142,22 +176,28 @@
     warnOnLargeFileLimit: 5
   docblockr: {}
   editor:
-    autoIndentOnPaste: false
     fontSize: 13
     preferredLineLength: 100
     scrollPastEnd: true
     softWrap: true
+    softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 4
     tabLength: 4
   "exception-reporting":
     userId: "1cb5eec8-c5ea-4294-a0a3-2d113b96890d"
   "file-icons": {}
+  "find-and-replace":
+    autocompleteSearches: true
+    scrollToResultOnLiveSearch: true
   firacode:
     scopes: [
       "*"
     ]
   fonts:
     fontFamily: "FiraCode"
+  "git-plus":
+    general: {}
+    remoteInteractions: {}
   "grammar-token-limit":
     maxTokensPerLine: 150
   "highlight-line":
@@ -166,6 +206,19 @@
     hideHighlightOnSelectedWord: true
   "hydrogen-launcher":
     command: "zsh"
+  "ide-python":
+    pylsPlugins:
+      mccabe:
+        enabled: false
+      pycodestyle:
+        enabled: false
+        ignore: [
+          ""
+        ]
+        maxLineLength: 80
+      pydocstyle: {}
+      pyflakes: {}
+      yapf: {}
   latex:
     outputDirectory: "build/"
   linter: {}
@@ -175,16 +228,30 @@
       "E251"
     ]
   "linter-ui-default":
-    panelHeight: 61
+    panelHeight: 300
     showPanel: true
   "markdown-preview-enhanced":
     codeBlockTheme: "atom-material.css"
-    previewTheme: "atom-material.css"
+    enableTypographer: true
+    fileExtension: ".md, .mmark, .markdown, .pmd"
+    openPreviewPaneAutomatically: false
+    usePandocParser: true
   "markdown-preview-plus":
+    breakOnSingleNewline: true
     enableLatexRenderingByDefault: true
-    enablePandoc: true
+    grammars: [
+      "source.gfm"
+      "source.litcoffee"
+      "text.html.basic"
+      "text.md"
+      "text.plain"
+      "text.plain.null-grammar source.pweave.md"
+    ]
+    pandocBibliography: true
+    pandocRemoveReferences: false
     useLazyHeaders: false
   "markdown-table-formatter":
+    formatOnSave: false
     limitLastColumnPadding: true
     markdownGrammarScopes: [
       "source.gfm"
@@ -211,6 +278,8 @@
       "highlight-selectedDecorationsZIndex": 0
       "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
+      "minimap-autohider": true
+      "minimap-autohiderDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
       selection: true
@@ -251,6 +320,12 @@
     cwdBehavior: "Directory of the script"
   "spell-check":
     addKnownWords: true
+    excludedScopes: [
+      ".code.md"
+      ".python"
+      ".markup.md"
+      "embedded"
+    ]
     grammars: [
       "text.tex.latex"
       "text.md"
@@ -264,13 +339,12 @@
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
-  "stata-exec":
-    advancePosition: true
+  "stata-exec": {}
   tabs:
     enableMruTabSwitching: false
     enableVcsColoring: true
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideIgnoredNames: true
   typewriter:
     showGutter: true
     showScrollbar: true
@@ -281,13 +355,34 @@
     showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
-    ignoreWhitespaceOnlyLines: true
 ".coffee.source":
   editor:
     tabLength: 2
+".js.source":
+  editor:
+    softWrapHangingIndent: 2
+    tabLength: 2
+".json.source":
+  editor:
+    preferredLineLength: 70
+".latex.pweave.source":
+  editor:
+    preferredLineLength: 80
+".makefile.source":
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
+".md.pweave.source":
+  editor:
+    preferredLineLength: 80
+".md.pweave.source:not(.code)":
+  editor:
+    commentEnd: " -->"
+    commentStart: "<!-- "
+    softWrap: true
 ".md.text":
   editor:
-    preferredLineLength: 100
+    preferredLineLength: 80
     softWrapAtPreferredLineLength: true
 ".python.regexp.source":
   editor:
@@ -296,6 +391,8 @@
   editor:
     autoIndent: true
     preferredLineLength: 80
+    softWrap: true
+    softWrapAtPreferredLineLength: true
 ".r.source":
   "bracket-matcher":
     autocompleteCharacters: [
@@ -315,6 +412,9 @@
 ".regexp.source.stata":
   editor:
     preferredLineLength: 150
+".restructuredtext.text":
+  editor:
+    tabLength: 3
 ".source.stata":
   "atom-alignment":
     addSpacePostfix: true
