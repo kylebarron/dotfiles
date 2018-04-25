@@ -1,3 +1,0 @@
-[submodule "autokey"]
-	path = autokey
-	url = git@github.com:kylebarron/stata-autokey.git
