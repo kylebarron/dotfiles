@@ -33,36 +33,46 @@
 
 # atom-text-editor[data-grammar="source julia"], .platform
 
+'atom-workspace':
+    'ctrl-o': 'advanced-open-file:toggle'
+    'ctrl-t': 'fuzzy-grep:toggle'
+    'ctrl-q': 'editor:split-selections-into-lines'
 "atom-text-editor":
-  'ctrl-alt-a'       : 'atom-alignment:align'
-  'ctrl-alt-shift-a' : 'atom-alignment:alignmultiple'
-  'ctrl-shift-down'  : 'editor:add-selection-below'
-  'ctrl-shift-up'    : 'editor:add-selection-above'
-  'ctrl-alt-shift-p' : 'editor:log-cursor-scope'
+    'ctrl-alt-a' : 'atom-alignment:align'
+    'ctrl-alt-shift-a' : 'atom-alignment:alignmultiple'
+    'ctrl-shift-down' : 'editor:add-selection-below'
+    'ctrl-shift-up' : 'editor:add-selection-above'
+    'ctrl-alt-shift-p' : 'editor:log-cursor-scope'
+
+"atom-text-editor[data-grammar='source pweave md']":
+    'ctrl-alt-b' : 'atom-beautify:beautify-language-python'
 # Default Keymaps for Markdown Writer
 # https://atom.io/packages/markdown-writer
 #
 # Wiki: https://github.com/zhuochun/md-writer/wiki/Settings-for-Keymaps
 #
-".platform-linux atom-text-editor[data-grammar='source md']":
-  "shift-ctrl-K":  "markdown-writer:insert-link"
-  "shift-ctrl-I":  "markdown-writer:insert-image"
-  "ctrl-v":        "markdown-writer:insert-image-clipboard"
-  "ctrl-i":        "markdown-writer:toggle-italic-text"
-  "ctrl-b":        "markdown-writer:toggle-bold-text"
-  "ctrl-'":        "markdown-writer:toggle-code-text"
-  "ctrl-k":        "markdown-writer:toggle-keystroke-text"
-  "ctrl-h":        "markdown-writer:toggle-strikethrough-text"
-  "ctrl-alt-1":    "markdown-writer:toggle-h1"
-  "ctrl-alt-2":    "markdown-writer:toggle-h2"
-  "ctrl-alt-3":    "markdown-writer:toggle-h3"
-  "ctrl-alt-4":    "markdown-writer:toggle-h4"
-  "ctrl-alt-5":    "markdown-writer:toggle-h5"
-  "shift-ctrl-O":  "markdown-writer:toggle-ol"
-  "shift-ctrl-U":  "markdown-writer:toggle-ul"
-  "shift-ctrl->":  "markdown-writer:toggle-blockquote"
-  'shift-ctrl-"':  "markdown-writer:toggle-codeblock-text"
-  "ctrl-j ctrl-p": "markdown-writer:jump-to-previous-heading"
-  "ctrl-j ctrl-n": "markdown-writer:jump-to-next-heading"
-  "ctrl-j ctrl-d": "markdown-writer:jump-to-reference-definition"
-  "ctrl-j ctrl-t": "markdown-writer:jump-to-next-table-cell"
+".platform-linux atom-text-editor[data-grammar='text md']":
+    'ctrl-alt-b' : 'atom-beautify:beautify-language-python'
+    "shift-ctrl-I": "markdown-writer:insert-image"
+    "ctrl-v": "markdown-writer:insert-image-clipboard"
+    "ctrl-i": "markdown-writer:toggle-italic-text"
+    "ctrl-b": "markdown-writer:toggle-bold-text"
+    "ctrl-'": "markdown-writer:toggle-code-text"
+    "ctrl-k": "markdown-writer:toggle-keystroke-text"
+    "ctrl-h": "markdown-writer:toggle-strikethrough-text"
+    "ctrl-alt-1": "markdown-writer:toggle-h1"
+    "ctrl-alt-2": "markdown-writer:toggle-h2"
+    "ctrl-alt-3": "markdown-writer:toggle-h3"
+    "ctrl-alt-4": "markdown-writer:toggle-h4"
+    "ctrl-alt-5": "markdown-writer:toggle-h5"
+    "shift-ctrl-O": "markdown-writer:toggle-ol"
+    "shift-ctrl-U": "markdown-writer:toggle-ul"
+    "shift-ctrl->": "markdown-writer:toggle-blockquote"
+    'shift-ctrl-"': "markdown-writer:toggle-codeblock-text"
+    "ctrl-j ctrl-p": "markdown-writer:jump-to-previous-heading"
+    "ctrl-j ctrl-n": "markdown-writer:jump-to-next-heading"
+    "ctrl-j ctrl-d": "markdown-writer:jump-to-reference-definition"
+    "ctrl-j ctrl-t": "markdown-writer:jump-to-next-table-cell"
+
+'.advanced-open-file atom-text-editor':
+  'ctrl-w': 'advanced-open-file:delete-path-component'
