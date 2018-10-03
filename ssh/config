@@ -1,0 +1,76 @@
+Host *oldage*
+    User barronk
+
+Host *oldnber*
+    User barronk
+
+Host *age*
+    User barronk-dua51929
+    ForwardX11 yes
+
+Host *nber*
+    User barronk-dua51929
+    ForwardX11 yes
+
+Host *age1
+    Hostname age1.nber.org
+Host *age2
+    Hostname age2.nber.org
+Host *age3
+    Hostname age3.nber.org
+Host *age4
+    Hostname age4.nber.org
+Host *age5
+    Hostname age5.nber.org
+Host *age6
+    Hostname age6.nber.org
+Host *age7
+    Hostname age7.nber.org
+Host *age9
+    Hostname age9.nber.org
+Host *age10
+    Hostname age10.nber.org
+Host *age13
+    Hostname age13.nber.org
+Host *age14
+    Hostname age14.nber.org
+Host *age16
+    Hostname age16.nber.org
+Host *age17
+    Hostname age17.nber.org
+Host *agesas1
+    Hostname agesas1.nber.org
+Host *agesas2
+    Hostname agesas2.nber.org
+Host *agesas3
+    Hostname agesas3.nber.org
+
+Host *nber1
+    Hostname nber1.nber.org
+Host *nber2
+    Hostname nber2.nber.org
+Host *nber3
+    Hostname nber3.nber.org
+Host *nber4
+    Hostname nber4.nber.org
+Host *nber5
+    Hostname nber5.nber.org
+Host *nber6
+    Hostname nber6.nber.org
+Host *nber7
+    Hostname nber7.nber.org
+Host *nber8
+    Hostname nber8.nber.org
+Host *nber9
+    Hostname nber9.nber.org
+
+Host mit
+    User barronk
+    Hostname eosloan.mit.edu
+    ForwardX11 yes
+
+Host l*
+    LocalForward 8888 localhost:8888
+
+Host *
+    ForwardAgent yes
