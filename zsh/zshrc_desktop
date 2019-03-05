@@ -141,6 +141,11 @@ function lesscsv () {
     column -s, -t < $1 | less -#2 -N -S
 }
 
+# update display for long-running tmux sessions
+function update_display() {
+    export DISPLAY="`tmux show-env | sed -n 's/^DISPLAY=//p'`"
+}
+
 # Other shortcuts
 alias clip="xclip -sel clip"
 alias nano="micro"
