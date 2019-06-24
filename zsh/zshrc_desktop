@@ -1,21 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="/opt/node/bin:$PATH"
-export PATH="/usr/local/cuda-8.0/bin:$PATH"
-export PATH="/opt/cisco/anyconnect/vpn:$PATH"
-export PATH="/opt/sublime_text/:$PATH"
 export PATH="$HOME/local/anaconda3/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 
-export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
 
 export MANPATH=$HOME/local/share/man:$MANPATH
 
-export SSH_AUTH_SOCK=~/.export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
-
 if type "micro" > /dev/null
 then
-    export EDITOR='micro'    
+    export EDITOR='micro'
+    alias nano="micro"
 else
     export EDITOR='nano'
 fi
@@ -70,7 +64,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions colored-man-pages extract tmux web-search zsh-wakatime zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions colored-man-pages extract zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,20 +88,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-
 # ---------------------------------------------------------------------
-# Useful
-
-export mtex=`kpsewhich -var-value=TEXMFHOME`
-
-# Options
+# Useful Options
 set noclobber
 
 # ls and dir
@@ -129,7 +111,6 @@ alias l.='ls -d .*'
 # Random aliases to prevent accidental deletes/overwrites
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
 
 # PS aliases
 #alias psg='ps -ax | grep \!* | grep -v grep'
@@ -148,12 +129,9 @@ function update_display() {
 
 # Other shortcuts
 alias clip="xclip -sel clip"
-alias nano="micro"
 
 alias gpg=gpg2
-alias bfg="java -jar /opt/bfg/bfg-1.12.15.jar"
 eval "$(hub alias -s)"
-alias stata="/opt/stata/xstata"
 
 # Get memory used by program
 function memll() {
@@ -172,38 +150,8 @@ function mdu() {
 }
 
 # ---------------------------------------------------------------------
-# SSH Aliases
+# Other aliases
 
-alias ssh-google="ssh kyle@104.196.112.154 -L8888:localhost:8888"
-alias ssh-reverse="ssh -f -N -T -R22222:localhost:22 -R8787:localhost:8787 -R8888:localhost:8888 kyle@104.196.112.154"
-
-function jupyter-mit() {
-    ssh -L 7001:node${1}.eth.cluster:7001 -N barronk@eosloan.mit.edu
-}
-alias mit-jupyter=jupyter-mit
-function ssh-mit() {
-    ssh -Y ${1} barronk@eosloan.mit.edu
-}
-function ssh-home() {
-    ssh -Y ${1} kyle@kylebarron.ddns.net
-}
-
-function ssh-age() {
-    ssh -Y -L 8888:localhost:8888 \
-        barronk@age${1}.nber.org
-}
-
-function age-rstudio() {
-   ssh -N -L 882${1}:localhost:8787 \
-        barronk@age${1}.nber.org
-}
-
-function ssh-nber() {
-    ssh -Y ${2} barronk@${1}.nber.org
-}
-
-alias vpn-nber="cd /opt/forti && ./forti_cli --server vpn.nber.org:10443 --vpnuser barronk --keepalive"
-alias nber-vpn=vpn-nber
 alias scale-hdmi="xrandr --output HDMI-0 --scale 1.65x1.65"
 alias scale-dvi="xrandr --output DVI-I-1 --scale 1.65x1.65"
 alias scale="scale-hdmi && scale-dvi"
@@ -217,4 +165,3 @@ alias normal-dp=dp-normal
 autoload bashcompinit
 bashcompinit
 eval "$(pandoc --bash-completion)"
-eval $(thefuck --alias)
