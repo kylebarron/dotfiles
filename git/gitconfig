@@ -1,5 +1,5 @@
 [user]
-    email  = barronk@mit.edu
+    email  = kbarron@foursquare.com
     name   = Kyle Barron
     editor = micro
 
@@ -7,7 +7,7 @@
     editor = micro
 
 [push]
-    default = simple
+	default = current
 
 [alias]
     co      = checkout
@@ -31,5 +31,24 @@
     log1    = log --graph --decorate --all --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
     log2    = log --graph --decorate --all --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n' %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)'
 	git = !exec git
+
 [gpg]
 	program = gpg2
+
+[pull]
+	rebase = false
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
+[merge]
+	conflictstyle = zdiff3
